@@ -2,13 +2,13 @@ _core:
   default_config_hash: HlN7eAN2N4JIHsYv56V4E7sqC9bS609KwvGFjyD_mgk
 langcode: en
 uuid: 86165e4e-abb2-493a-bd2f-2f5205ecf7f8
-name: Drupal
-mail: ''
+name: 'My Drupal CMS site'
+mail: joshua.fernandes@axelerant.com
 slogan: ''
 page:
-  403: ''
+  403: /user/login
   404: ''
-  front: /user/login
+  front: /node/2
 admin_compact_mode: false
 weight_select_max: 100
 default_langcode: en
