@@ -19,6 +19,15 @@
 /web/sites/*/files
 /web/sites/*/private
 
+# Do not ignore configuration sync directories
+!/web/sites/*/files/sync/
+!/web/sites/*/files/sync
+!/web/sites/*/files/sync/**
+!/web/sites/default/files/sync/
+!/web/sites/default/files/sync
+!/web/sites/default/files/sync/**
+
+
 # Ignore SimpleTest multi-site environment.
 /web/sites/simpletest
 
