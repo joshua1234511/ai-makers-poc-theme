@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Grid Section Component
+ *
+ * A flexible grid layout component that supports configurable columns,
+ * spacing, and responsive behavior.
+ *
+ * Available variables:
+ * - columns: Number of columns (integer)
+ * - gap: Gap size between items (string)
+ * - layout: Layout type - auto-fit, auto-fill, or fixed (string)
+ * - min_item_width: Minimum width for grid items (string)
+ * - class: Additional CSS classes (string)
+ * - items: Array of items to display in the grid (slot)
+ */
+#}
+{%
+  set classes = [
+    'grid-section',
+    'grid',
+    layout == 'auto-fit' ? 'grid-auto-fit' : '',
+    layout == 'auto-fill' ? 'grid-auto-fill' : '',
+    layout == 'fixed' ? 'grid-fixed' : '',
+    class ? class : '',
+  ]|remove_empty
+%}
+{%
+  set grid_style = layout == 'fixed' ? 'grid-template-columns: repeat(' ~ columns ~ ', 1fr);' : ''
+%}
+{%
+  set grid_style = grid_style ~ ' gap: ' ~ gap ~ ';'
+%}
+{% if layout != 'fixed' %}
+  {%
+    set grid_style = grid_style ~ ' grid-template-columns: repeat(' ~ layout ~ ', minmax(' ~ min_item_width ~ ', 1fr));'
+  %}
+{% endif %}
+
+<div{{ attributes.addClass(classes) }}{% if grid_style %} style="{{ grid_style }}"{% endif %}>
+  {% if content %}
+    {{ content }}
+  {% endif %}
+</div>

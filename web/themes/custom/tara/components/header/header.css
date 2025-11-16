@@ -1,0 +1,351 @@
+/**
+ * @file
+ * Header Component Styles
+ */
+
+/* Header container */
+.header-component #header,
+.header-component .header-top,
+.header-component .header {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 3;
+}
+
+/* Header top */
+.header-component .header-top {
+  background-color: var(--color-primary-light);
+}
+
+.header-component .header-top-container {
+  position: relative;
+  display: flex;
+  padding: 6px 0;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* header top left block region */
+.header-component .header-top-block p:last-of-type {
+  margin: 0;
+}
+
+.header-component .header-top-left a {
+  color: var(--bold-color);
+}
+
+.header-component .header-top ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+
+.header-component .header-top .contextual-links {
+  display: none;
+}
+
+/* header top left block region */
+.header-component .header-top-left i {
+  background: var(--light);
+  color: var(--color-primary);
+  width: 2rem;
+  height: 2rem;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-transition: background 0.3s ease;
+  -moz-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+
+/* header for branding and main menu */
+.header-component .header {
+  background-color: #ffffff;
+}
+
+.header-component .header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+/* site branding */
+.header-component .site-branding {
+  display: flex;
+  align-items: center;
+}
+
+.header-component .site-branding img {
+  width: auto;
+  max-height: 80px;
+}
+
+.header-component .site-name-slogan {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-component .site-name {
+  position: relative;
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  line-height: 1.1;
+  color: var(--bold-color);
+  text-transform: uppercase;
+}
+
+.header-component .site-name a,
+.header-component .site-name a:hover {
+  color: var(--bold-color);
+}
+
+.header-component .site-slogan {
+  font-size: 0.9rem;
+  color: var(--bold-color);
+  line-height: 1;
+}
+
+/* header right */
+.header-component .header-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* main menu */
+.header-component .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+  margin-right: 6px;
+}
+
+.header-component .mobile-menu span {
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-primary);
+  transform-origin: left;
+  transition: all 0.6s ease;
+}
+
+.header-component .mobile-menu span:nth-child(2) {
+  background-color: var(--bold-color);
+}
+
+.header-component .menu-icon-active span:first-child {
+  transform: rotate(45deg);
+}
+
+.header-component .menu-icon-active span:last-child {
+  transform: rotate(-45deg);
+}
+
+.header-component .menu-icon-active span:nth-child(2) {
+  display: none;
+}
+
+.header-component .close-mobile-menu {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  display: grid;
+  place-content: center;
+  color: #ffffff;
+  font-size: 1rem;
+  width: 34px;
+  height: 34px;
+  z-index: 200;
+  border: 2px solid var(--color-primary);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.header-component .primary-menu-wrapper {
+  font-family: var(--font-heading);
+  font-weight: 400;
+}
+
+.header-component .menu-wrap {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  max-width: 320px;
+  height: 100%;
+  z-index: 10;
+  transform: translateX(-100%);
+  transition: all 0.4s ease;
+  padding-top: 30px;
+}
+
+.header-component .active-menu .menu-wrap {
+  background: rgba(0, 0, 0, 0.9);
+  transform: translateX(0);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.header-component .active-menu .menu-wrap .main-menu,
+.header-component .active-menu .menu-wrap .menu {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.header-component .region-primary-menu .menu,
+.header-component .region-primary-menu .submenu {
+  list-style: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-component .region-primary-menu .menu {
+  display: flex;
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 400;
+  flex-direction: column;
+  gap: 0;
+  padding: 0.5rem;
+  z-index: 10;
+}
+
+.header-component .region-primary-menu .menu-item-level-1 {
+  position: relative;
+  padding: 0;
+  border-bottom: 1px solid var(--text-color);
+}
+
+.header-component .region-primary-menu .menu a {
+  display: block;
+  color: #ffffff;
+  padding: 0.5rem 0;
+}
+
+.header-component .menu-item-has-children {
+  position: relative;
+}
+
+.header-component .menu-item-has-children::after {
+  position: absolute;
+  content: '+';
+  right: 0;
+  top: 0.5rem;
+  color: var(--color-primary);
+}
+
+.header-component .region-primary-menu .submenu {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  padding: 0 0 0 2rem;
+}
+
+.header-component .region-primary-menu .submenu li {
+  border-top: 1px solid var(--text-color);
+}
+
+/* search box */
+.header-component .full-page-search {
+  position: relative;
+}
+
+.header-component .search-icon {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 10px;
+  border-left: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.header-component .search-icon i {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.header-component .search-box {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 20;
+  transition: all 0.2s linear;
+  flex-direction: column;
+}
+
+.header-component .search-box-content {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  -webkit-animation: slideDown 0.5s linear forwards;
+  -moz-animation: slideDown 0.5s linear forwards;
+  -o-animation: slideDown 0.5s linear forwards;
+  animation: slideDown 0.5s linear forwards;
+  text-align: center;
+}
+
+.header-component .search-box-content .block-region {
+  width: 100%;
+}
+
+.header-component .search-box-content .block-title {
+  color: #ffffff;
+}
+
+.header-component .search-box-content form label {
+  display: none;
+}
+
+.header-component .search-box-content input[type="search"] {
+  background-color: #121212;
+  color: #ffffff;
+  width: 100%;
+  padding: 1.4rem;
+  border: 2px solid var(--text-color);
+  border-radius: 6px;
+  outline: 0;
+  box-shadow: none;
+}
+
+.header-component .search-box-content input[type="submit"] {
+  padding: 10px 2rem;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.header-component .search-box-content input[type="submit"]:hover {
+  color: #ffffff;
+  border-color: var(--color-primary);
+}
+
+.header-component .search-box-close {
+  flex: 1;
+  cursor: url("../images/cursor.svg"), auto;
+}

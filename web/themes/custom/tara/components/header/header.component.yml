@@ -1,0 +1,98 @@
+name: Header
+description: 'Site header with logo, navigation menu, search, and social icons.'
+props:
+  show_header_top:
+    type: boolean
+    default: true
+    title: 'Show Header Top'
+    description: 'Display the header top section with social icons'
+  show_site_branding:
+    type: boolean
+    default: true
+    title: 'Show Site Branding'
+    description: 'Display site logo and branding'
+  show_primary_menu:
+    type: boolean
+    default: true
+    title: 'Show Primary Menu'
+    description: 'Display primary navigation menu'
+  show_search:
+    type: boolean
+    default: true
+    title: 'Show Search'
+    description: 'Display search icon and full-page search'
+  show_social_icons:
+    type: boolean
+    default: true
+    title: 'Show Social Icons'
+    description: 'Display social media icons in header top'
+  site_logo:
+    type: string
+    title: 'Site Logo URL'
+    description: 'URL path to the site logo image'
+  site_name:
+    type: string
+    title: 'Site Name'
+    description: 'Name of the site'
+  site_slogan:
+    type: string
+    title: 'Site Slogan'
+    description: 'Site slogan or tagline'
+  facebook_url:
+    type: string
+    title: 'Facebook URL'
+    description: 'Facebook page URL'
+  twitter_url:
+    type: string
+    title: 'Twitter URL'
+    description: 'Twitter page URL'
+  instagram_url:
+    type: string
+    title: 'Instagram URL'
+    description: 'Instagram page URL'
+  linkedin_url:
+    type: string
+    title: 'LinkedIn URL'
+    description: 'LinkedIn page URL'
+  youtube_url:
+    type: string
+    title: 'YouTube URL'
+    description: 'YouTube channel URL'
+  vimeo_url:
+    type: string
+    title: 'Vimeo URL'
+    description: 'Vimeo page URL'
+  vk_url:
+    type: string
+    title: 'VK URL'
+    description: 'VK.com page URL'
+  whatsapp_url:
+    type: string
+    title: 'WhatsApp URL'
+    description: 'WhatsApp contact URL'
+  github_url:
+    type: string
+    title: 'GitHub URL'
+    description: 'GitHub profile URL'
+  telegram_url:
+    type: string
+    title: 'Telegram URL'
+    description: 'Telegram channel URL'
+  class:
+    type: string
+    title: 'Additional CSS Classes'
+    description: 'Additional CSS classes to apply to the header'
+slots:
+  header_top:
+    title: 'Header Top Content'
+    description: 'Content for the header top region'
+  site_branding:
+    title: 'Site Branding'
+    description: 'Site branding block content (logo, name, slogan)'
+  primary_menu:
+    title: 'Primary Menu'
+    description: 'Primary navigation menu content'
+  search_box:
+    title: 'Search Box'
+    description: 'Search form block content'
+library: tara/header

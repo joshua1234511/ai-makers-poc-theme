@@ -1,0 +1,48 @@
+name: Social Icons
+description: 'Social media icons component for header and footer.'
+props:
+  facebook_url:
+    type: string
+    title: 'Facebook URL'
+    description: 'Facebook page URL'
+  twitter_url:
+    type: string
+    title: 'Twitter URL'
+    description: 'Twitter page URL'
+  instagram_url:
+    type: string
+    title: 'Instagram URL'
+    description: 'Instagram page URL'
+  linkedin_url:
+    type: string
+    title: 'LinkedIn URL'
+    description: 'LinkedIn page URL'
+  youtube_url:
+    type: string
+    title: 'YouTube URL'
+    description: 'YouTube channel URL'
+  vimeo_url:
+    type: string
+    title: 'Vimeo URL'
+    description: 'Vimeo page URL'
+  vk_url:
+    type: string
+    title: 'VK URL'
+    description: 'VK.com page URL'
+  whatsapp_url:
+    type: string
+    title: 'WhatsApp URL'
+    description: 'WhatsApp contact URL'
+  github_url:
+    type: string
+    title: 'GitHub URL'
+    description: 'GitHub profile URL'
+  telegram_url:
+    type: string
+    title: 'Telegram URL'
+    description: 'Telegram channel URL'
+  class:
+    type: string
+    title: 'Additional CSS Classes'
+    description: 'Additional CSS classes to apply to the social icons container'
+library: tara/social-icons

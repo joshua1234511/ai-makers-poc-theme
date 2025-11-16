@@ -1,0 +1,143 @@
+{#
+/**
+ * @file
+ * Header Component
+ *
+ * Site header with logo, navigation menu, search, and social icons.
+ *
+ * Available variables:
+ * - show_header_top: Whether to show header top section (boolean)
+ * - show_site_branding: Whether to show site branding (boolean)
+ * - show_primary_menu: Whether to show primary menu (boolean)
+ * - show_search: Whether to show search (boolean)
+ * - show_social_icons: Whether to show social icons (boolean)
+ * - site_logo: Site logo URL (string)
+ * - site_name: Site name (string)
+ * - site_slogan: Site slogan (string)
+ * - facebook_url: Facebook URL (string)
+ * - twitter_url: Twitter URL (string)
+ * - instagram_url: Instagram URL (string)
+ * - linkedin_url: LinkedIn URL (string)
+ * - youtube_url: YouTube URL (string)
+ * - vimeo_url: Vimeo URL (string)
+ * - vk_url: VK URL (string)
+ * - whatsapp_url: WhatsApp URL (string)
+ * - github_url: GitHub URL (string)
+ * - telegram_url: Telegram URL (string)
+ * - class: Additional CSS classes (string)
+ * - header_top: Header top region content (slot)
+ * - site_branding: Site branding content (slot)
+ * - primary_menu: Primary menu content (slot)
+ * - search_box: Search box content (slot)
+ */
+#}
+{%
+  set classes = [
+    'header-component',
+    class ? class : '',
+  ]|remove_empty
+%}
+
+<!-- Start: Header -->
+<header id="header"{{ attributes.addClass(classes) }}>
+  {% if show_header_top and (header_top or show_social_icons) %}
+    <div class="header-top">
+      <div class="container">
+        <div class="header-top-container">
+          {% if header_top %}
+            <div class="header-top-left header-top-block">
+              {{ header_top }}
+            </div> <!--/.header-top-left -->
+          {% endif %}
+          {% if show_social_icons %}
+            <div class="header-top-right header-top-block">
+              {{ include('tara:social-icons', {
+                facebook_url: facebook_url,
+                twitter_url: twitter_url,
+                instagram_url: instagram_url,
+                linkedin_url: linkedin_url,
+                youtube_url: youtube_url,
+                vimeo_url: vimeo_url,
+                vk_url: vk_url,
+                whatsapp_url: whatsapp_url,
+                github_url: github_url,
+                telegram_url: telegram_url,
+              }) }}
+            </div> <!--/.header-top-right -->
+          {% endif %}
+        </div> <!--/.header-top-container -->
+      </div> <!--/.container -->
+    </div> <!--/.header-top -->
+  {% endif %}
+  
+  <div class="header">
+    <div class="container">
+      <div class="header-container">
+        {% if show_site_branding and site_branding %}
+          <div class="site-branding-region">
+            {{ site_branding }}
+          </div> <!--/.site-branding -->
+        {% elseif show_site_branding and (site_logo or site_name or site_slogan) %}
+          <div class="site-branding-region">
+            <div class="site-branding">
+              {% if site_logo %}
+                <div class="site-logo">
+                  <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+                    <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
+                  </a>
+                </div>
+              {% endif %}
+              {% if site_name or site_slogan %}
+                <div class="site-name-slogan">
+                  {% if site_name %}
+                    <div class="site-name">
+                      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+                    </div>
+                  {% endif %}
+                  {% if site_slogan %}
+                    <div class="site-slogan">{{ site_slogan }}</div>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          </div> <!--/.site-branding -->
+        {% endif %}
+        
+        {% if show_primary_menu and primary_menu or show_search and search_box %}
+          <div class="header-right">
+            <!-- Start: primary menu region -->
+            {% if show_primary_menu and primary_menu %}
+              <div class="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div><!-- /mobile-menu -->
+              <div class="primary-menu-wrapper">
+                <div class="menu-wrap">
+                  <div class="close-mobile-menu"><i class="icon-close" aria-hidden="true"></i></div>
+                  {{ primary_menu }}
+                </div>
+              </div><!-- /primary-menu-wrapper -->
+            {% endif %}
+            
+            {% if show_search and search_box %}
+              <div class="full-page-search">
+                <div class="search-icon">
+                  <i class="icon-search" aria-hidden="true"></i>
+                </div> <!--/.search icon -->
+                <div class="search-box">
+                  <div class="search-box-close"></div>
+                  <div class="search-box-content">
+                    {{ search_box }}
+                  </div>
+                  <div class="search-box-close"></div>
+                </div><!--/.search-box -->
+              </div> <!--/.full-page-search -->
+            {% endif %}
+          </div> <!--/.header-right -->
+        {% endif %}
+      </div> <!--/.header-container -->
+    </div> <!--/.container -->
+  </div><!-- /.header -->
+</header>
+<!-- End: Header -->

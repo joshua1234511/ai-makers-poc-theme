@@ -1,0 +1,125 @@
+name: Grid Section
+description: 'A flexible grid section component for layout with configurable columns and spacing.'
+props:
+  columns:
+    type: integer
+    default: 3
+    title: 'Number of Columns'
+    description: 'Number of columns in the grid layout'
+  gap:
+    type: string
+    default: '1rem'
+    title: 'Gap Size'
+    description: 'Spacing between grid items (e.g., 1rem, 2rem, 0.5rem)'
+  layout:
+    type: string
+    default: 'auto-fit'
+    title: 'Layout Type'
+    description: 'Grid layout type: auto-fit, auto-fill, or fixed'
+    enum:
+      - auto-fit
+      - auto-fill
+      - fixed
+  min_item_width:
+    type: string
+    default: '265px'
+    title: 'Minimum Item Width'
+    description: 'Minimum width for each grid item'
+  class:
+    type: string
+    title: 'Additional CSS Classes'
+    description: 'Additional CSS classes to apply to the grid container'
+slots:
+  default:
+    title: 'Grid Items'
+    description: 'Content items to display in the grid'
+    allowed_tags:
+      - div
+      - article
+      - section
+      - figure
+      - img
+      - p
+      - h1
+      - h2
+      - h3
+      - h4
+      - h5
+      - h6
+      - ul
+      - ol
+      - li
+      - a
+      - span
+      - blockquote
+      - pre
+      - code
+      - strong
+      - em
+      - b
+      - i
+      - u
+      - small
+      - sub
+      - sup
+      - mark
+      - del
+      - ins
+      - abbr
+      - dfn
+      - kbd
+      - samp
+      - var
+      - time
+      - address
+      - cite
+      - q
+      - dl
+      - dt
+      - dd
+      - table
+      - thead
+      - tbody
+      - tfoot
+      - tr
+      - th
+      - td
+      - colgroup
+      - col
+      - caption
+      - form
+      - fieldset
+      - legend
+      - label
+      - input
+      - button
+      - select
+      - datalist
+      - optgroup
+      - option
+      - textarea
+      - output
+      - progress
+      - meter
+      - details
+      - summary
+      - menu
+      - menuitem
+      - canvas
+      - svg
+      - iframe
+      - embed
+      - object
+      - param
+      - video
+      - audio
+      - source
+      - track
+      - map
+      - area
+      - script
+      - noscript
+      - template
+      - slot
+      - '*'
+library: tara/grid-section

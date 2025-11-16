@@ -1,0 +1,43 @@
+/**
+ * @file
+ * Grid Section Component Styles
+ */
+
+.grid-section {
+  display: grid;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  list-style-type: none;
+}
+
+.grid-section.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+}
+
+.grid-section.grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr));
+}
+
+.grid-section.grid-fixed {
+  /* Fixed columns handled inline via style attribute */
+}
+
+.grid-section .grid-item {
+  display: block;
+  width: 100%;
+}
+
+.grid-section .grid-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .grid-section {
+    grid-template-columns: 1fr !important;
+  }
+}
