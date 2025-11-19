@@ -97,6 +97,67 @@ Social media icons component for header and footer.
 - Social media URLs: `facebook_url`, `twitter_url`, `instagram_url`, `linkedin_url`, `youtube_url`, `vimeo_url`, `vk_url`, `whatsapp_url`, `github_url`, `telegram_url`
 - `class` (string): Additional CSS classes
 
+### 4. Footer (`footer`)
+
+Site footer component with multiple footer regions, copyright, social icons, and scroll-to-top button.
+
+**Usage:**
+```twig
+{{ include('tara:footer', {
+  show_footer_top: true,
+  show_footer_blocks: true,
+  show_copyright: true,
+  show_social_icons: true,
+  show_footer_bottom: true,
+  show_scroll_to_top: true,
+  site_name: 'My Site',
+  copyright_text: 'Custom copyright text',
+  facebook_url: 'https://facebook.com/mysite',
+  twitter_url: 'https://twitter.com/mysite',
+  fontawesome_six: true,
+}) }}
+  {% slot footer_top %}
+    {# Footer top content #}
+  {% endslot %}
+  {% slot footer_first %}
+    {# First footer block #}
+  {% endslot %}
+  {% slot footer_second %}
+    {# Second footer block #}
+  {% endslot %}
+  {% slot footer_third %}
+    {# Third footer block #}
+  {% endslot %}
+  {% slot footer_fourth %}
+    {# Fourth footer block #}
+  {% endslot %}
+  {% slot footer_bottom %}
+    {# Footer bottom content #}
+  {% endslot %}
+{{ endinclude }}
+```
+
+**Props:**
+- `show_footer_top` (boolean, default: true): Display footer top section
+- `show_footer_blocks` (boolean, default: true): Display footer blocks
+- `show_copyright` (boolean, default: true): Display copyright text
+- `show_social_icons` (boolean, default: true): Display social icons
+- `show_footer_bottom` (boolean, default: true): Display footer bottom section
+- `show_scroll_to_top` (boolean, default: true): Display scroll to top button
+- `site_name` (string): Site name for copyright
+- `copyright_text` (string): Custom copyright text (if empty, uses default format)
+- Social media URLs: `facebook_url`, `twitter_url`, `instagram_url`, `linkedin_url`, `youtube_url`, `vimeo_url`, `vk_url`, `whatsapp_url`, `github_url`, `telegram_url`
+- Icon library toggles: `fontawesome_four`, `fontawesome_five`, `fontawesome_six`, `bootstrapicons`
+- `class` (string): Additional CSS classes
+
+**Slots:**
+- `footer_top`: Footer top region content
+- `footer_first`: First footer block content
+- `footer_second`: Second footer block content
+- `footer_third`: Third footer block content
+- `footer_fourth`: Fourth footer block content
+- `footer_bottom`: Footer bottom region content
+
 ## Integration with Drupal Canvas
 
 These components are designed to work with Drupal Canvas. You can:
@@ -122,5 +183,6 @@ Component libraries are defined in `tara.libraries.yml`:
 - `tara/grid-section`
 - `tara/header`
 - `tara/social-icons`
+- `tara/footer`
 
 These libraries are automatically loaded when the components are used.

@@ -1,0 +1,106 @@
+{#
+/**
+ * @file
+ * Footer Component
+ *
+ * Site footer with multiple footer regions, copyright, social icons, and scroll-to-top button.
+ */
+#}
+{%
+  set classes = [
+    'footer-component',
+    class ? class : '',
+  ]|remove_empty
+%}
+
+<section id="last-section" class="last-section"></section>
+<!-- Start: Footer -->
+<footer id="footer"{{ attributes.addClass(classes) }}>
+  <div class="footer">
+    <div class="container">
+      {% if show_footer_top and footer_top %}
+        <section class="footer-top">
+          {{ footer_top }}
+        </section>
+      {% endif %}<!-- /footer-top -->
+      
+      {% if show_footer_blocks and (footer_first or footer_second or footer_third or footer_fourth) %}
+        <section class="footer-blocks">
+          {% if footer_first %}
+            <div class="footer-block">
+              {{ footer_first }}
+            </div>
+          {% endif %}<!--/footer-first -->
+          {% if footer_second %}
+            <div class="footer-block">
+              {{ footer_second }}
+            </div>
+          {% endif %}<!--/footer-second -->
+          {% if footer_third %}
+            <div class="footer-block">
+              {{ footer_third }}
+            </div>
+          {% endif %}<!--/footer-third -->
+          {% if footer_fourth %}
+            <div class="footer-block">
+              {{ footer_fourth }}
+            </div>
+          {% endif %}<!--/footer-fourth -->
+        </section> <!--/footer-blocks -->
+      {% endif %}
+      
+      {% if show_copyright and copyright_text or show_social_icons %}
+        <section class="footer-bottom-middle">
+          {% if show_copyright and copyright_text %}
+            <div class="copyright">
+              {{ copyright_text }}
+            </div>
+          {% elseif show_copyright and site_name %}
+            <div class="copyright">
+              &copy; {{ "now"|date("Y") }} {{ site_name }}, All rights reserved.
+            </div>
+          {% endif %} <!-- end if for copyright -->
+          {% if show_social_icons %}
+            <div class="footer-bottom-middle-right">
+              {{ include('tara:social-icons', {
+                facebook_url: facebook_url,
+                twitter_url: twitter_url,
+                instagram_url: instagram_url,
+                linkedin_url: linkedin_url,
+                youtube_url: youtube_url,
+                vimeo_url: vimeo_url,
+                vk_url: vk_url,
+                whatsapp_url: whatsapp_url,
+                github_url: github_url,
+                telegram_url: telegram_url,
+              }) }}
+            </div>
+          {% endif %} <!-- end if for social icons -->
+        </section><!-- /footer-bottom-middle -->
+      {% endif %}
+      
+      {% if show_footer_bottom and footer_bottom %}
+        <div class="footer-bottom">
+          {{ footer_bottom }}
+        </div> <!--/.footer-bottom -->
+      {% endif %}
+    </div><!-- /.container -->
+  </div> <!--/.footer -->
+</footer>
+
+{% if show_scroll_to_top %}
+  <div class="scrolltop"><i class="icon-arrow-up" aria-hidden="true"></i></div>
+{% endif %}
+
+{% if fontawesome_four %}
+  {{ attach_library('tara/fontawesome4') }}
+{% endif %}
+{% if fontawesome_five %}
+  {{ attach_library('tara/fontawesome5') }}
+{% endif %}
+{% if fontawesome_six %}
+  {{ attach_library('tara/fontawesome6') }}
+{% endif %}
+{% if bootstrapicons %}
+  {{ attach_library('tara/bootstrap-icons') }}
+{% endif %}

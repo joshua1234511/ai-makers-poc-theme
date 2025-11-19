@@ -1,0 +1,125 @@
+name: Footer
+description: 'Site footer with multiple footer regions, copyright, social icons, and scroll-to-top button.'
+props:
+  show_footer_top:
+    type: boolean
+    default: true
+    title: 'Show Footer Top'
+    description: 'Display the footer top section'
+  show_footer_blocks:
+    type: boolean
+    default: true
+    title: 'Show Footer Blocks'
+    description: 'Display footer blocks (first, second, third, fourth)'
+  show_copyright:
+    type: boolean
+    default: true
+    title: 'Show Copyright'
+    description: 'Display copyright text'
+  show_social_icons:
+    type: boolean
+    default: true
+    title: 'Show Social Icons'
+    description: 'Display social media icons in footer'
+  show_footer_bottom:
+    type: boolean
+    default: true
+    title: 'Show Footer Bottom'
+    description: 'Display footer bottom section'
+  show_scroll_to_top:
+    type: boolean
+    default: true
+    title: 'Show Scroll to Top'
+    description: 'Display scroll to top button'
+  site_name:
+    type: string
+    title: 'Site Name'
+    description: 'Name of the site for copyright'
+  copyright_text:
+    type: string
+    title: 'Copyright Text'
+    description: 'Custom copyright text (if empty, uses default format)'
+  facebook_url:
+    type: string
+    title: 'Facebook URL'
+    description: 'Facebook page URL'
+  twitter_url:
+    type: string
+    title: 'Twitter URL'
+    description: 'Twitter page URL'
+  instagram_url:
+    type: string
+    title: 'Instagram URL'
+    description: 'Instagram page URL'
+  linkedin_url:
+    type: string
+    title: 'LinkedIn URL'
+    description: 'LinkedIn page URL'
+  youtube_url:
+    type: string
+    title: 'YouTube URL'
+    description: 'YouTube channel URL'
+  vimeo_url:
+    type: string
+    title: 'Vimeo URL'
+    description: 'Vimeo page URL'
+  vk_url:
+    type: string
+    title: 'VK URL'
+    description: 'VK.com page URL'
+  whatsapp_url:
+    type: string
+    title: 'WhatsApp URL'
+    description: 'WhatsApp contact URL'
+  github_url:
+    type: string
+    title: 'GitHub URL'
+    description: 'GitHub profile URL'
+  telegram_url:
+    type: string
+    title: 'Telegram URL'
+    description: 'Telegram channel URL'
+  fontawesome_four:
+    type: boolean
+    default: false
+    title: 'Load FontAwesome 4'
+    description: 'Load FontAwesome 4 icon library'
+  fontawesome_five:
+    type: boolean
+    default: false
+    title: 'Load FontAwesome 5'
+    description: 'Load FontAwesome 5 icon library'
+  fontawesome_six:
+    type: boolean
+    default: false
+    title: 'Load FontAwesome 6'
+    description: 'Load FontAwesome 6 icon library'
+  bootstrapicons:
+    type: boolean
+    default: false
+    title: 'Load Bootstrap Icons'
+    description: 'Load Bootstrap Icons library'
+  class:
+    type: string
+    title: 'Additional CSS Classes'
+    description: 'Additional CSS classes to apply to the footer'
+slots:
+  footer_top:
+    title: 'Footer Top Content'
+    description: 'Content for the footer top region'
+  footer_first:
+    title: 'Footer First Block'
+    description: 'Content for the first footer block'
+  footer_second:
+    title: 'Footer Second Block'
+    description: 'Content for the second footer block'
+  footer_third:
+    title: 'Footer Third Block'
+    description: 'Content for the third footer block'
+  footer_fourth:
+    title: 'Footer Fourth Block'
+    description: 'Content for the fourth footer block'
+  footer_bottom:
+    title: 'Footer Bottom Content'
+    description: 'Content for the footer bottom region'
+library: tara/footer
