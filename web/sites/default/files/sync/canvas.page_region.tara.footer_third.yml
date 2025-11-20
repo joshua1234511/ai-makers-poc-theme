@@ -1,0 +1,10 @@
+uuid: f2919951-0195-42a7-90a8-996036c329ee
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tara
+id: tara.footer_third
+region: footer_third
+theme: tara
+component_tree: {  }

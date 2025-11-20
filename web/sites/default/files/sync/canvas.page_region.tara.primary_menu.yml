@@ -1,0 +1,22 @@
+uuid: 51ca6464-2cf3-44bc-a712-1f65356a06e8
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.system_menu_block.main
+  theme:
+    - tara
+id: tara.primary_menu
+region: primary_menu
+theme: tara
+component_tree:
+  -
+    uuid: 76d53aa7-a545-4cb3-afe6-6f6d15c360f6
+    component_id: block.system_menu_block.main
+    component_version: 6fcbe14a0547fc91
+    inputs:
+      label: 'Main navigation'
+      label_display: '0'
+      level: 1
+      depth: 2
+      expand_all_items: false

@@ -1,0 +1,13 @@
+uuid: dc102212-ba6f-4bf1-ba1b-e917850378f9
+langcode: en
+status: true
+dependencies: {  }
+name: Other
+configEntityTypeId: component
+weight: 0
+items:
+  - sdc.navigation.title
+  - sdc.tara.footer
+  - sdc.tara.grid-section
+  - sdc.tara.header
+  - sdc.tara.social-icons

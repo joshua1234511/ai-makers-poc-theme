@@ -1,0 +1,27 @@
+uuid: 79381127-3a24-42b6-b041-4ebdf2ae68b2
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.latest
+  module:
+    - views
+active_version: 4f3ebab3e05dbcea
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'views_block:latest-latest'
+        label: Latest
+        label_display: '0'
+        provider: views
+        views_label: ''
+        items_per_page: null
+    fallback_metadata:
+      slot_definitions: null
+label: Latest
+id: block.views_block.latest-latest
+provider: views
+source: block
+source_local_id: 'views_block:latest-latest'
+category: 'Lists (Views)'

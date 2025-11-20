@@ -1,0 +1,37 @@
+uuid: 904cd4a2-dd4e-458c-a921-515803875387
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tara
+active_version: 269e441c573236cc
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        footer_top:
+          title: 'Footer Top Content'
+          description: 'Content for the footer top region'
+        footer_first:
+          title: 'Footer First Block'
+          description: 'Content for the first footer block'
+        footer_second:
+          title: 'Footer Second Block'
+          description: 'Content for the second footer block'
+        footer_third:
+          title: 'Footer Third Block'
+          description: 'Content for the third footer block'
+        footer_fourth:
+          title: 'Footer Fourth Block'
+          description: 'Content for the fourth footer block'
+        footer_bottom:
+          title: 'Footer Bottom Content'
+          description: 'Content for the footer bottom region'
+label: Footer
+id: sdc.tara.footer
+provider: tara
+source: sdc
+source_local_id: 'tara:footer'
+category: Other

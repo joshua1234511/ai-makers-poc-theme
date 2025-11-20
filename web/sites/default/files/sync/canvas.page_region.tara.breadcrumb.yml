@@ -1,0 +1,19 @@
+uuid: b1280890-952d-433f-b1c7-823f3096ff3f
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.system_breadcrumb_block
+  theme:
+    - tara
+id: tara.breadcrumb
+region: breadcrumb
+theme: tara
+component_tree:
+  -
+    uuid: ea018faa-f274-4438-8ea1-49c9e9163187
+    component_id: block.system_breadcrumb_block
+    component_version: cec23aa503e2a02f
+    inputs:
+      label: Breadcrumbs
+      label_display: '0'

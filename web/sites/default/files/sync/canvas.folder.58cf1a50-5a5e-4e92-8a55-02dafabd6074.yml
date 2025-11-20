@@ -1,0 +1,9 @@
+uuid: 58cf1a50-5a5e-4e92-8a55-02dafabd6074
+langcode: en
+status: true
+dependencies: {  }
+name: 'Lists (Views)'
+configEntityTypeId: component
+weight: 0
+items:
+  - block.views_block.latest-latest

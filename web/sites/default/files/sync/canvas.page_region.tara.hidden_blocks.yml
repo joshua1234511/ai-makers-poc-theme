@@ -1,0 +1,10 @@
+uuid: 567137f5-5d3f-45dd-8f34-5bbba6195337
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tara
+id: tara.hidden_blocks
+region: hidden_blocks
+theme: tara
+component_tree: {  }

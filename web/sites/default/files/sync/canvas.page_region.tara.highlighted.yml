@@ -1,0 +1,19 @@
+uuid: 7ca27fb7-8d91-4245-971e-5b4bb2eec2b0
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.system_messages_block
+  theme:
+    - tara
+id: tara.highlighted
+region: highlighted
+theme: tara
+component_tree:
+  -
+    uuid: 12f5f5df-c0dc-4d02-9b60-2d5aef9f9690
+    component_id: block.system_messages_block
+    component_version: b92f802cf68eb83e
+    inputs:
+      label: 'Status messages'
+      label_display: '0'

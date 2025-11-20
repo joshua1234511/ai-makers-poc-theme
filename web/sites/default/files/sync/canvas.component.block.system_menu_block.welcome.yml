@@ -1,0 +1,28 @@
+uuid: 093f81ae-e58b-4059-b0e2-ef5247622400
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.welcome
+  module:
+    - system
+active_version: 35d3594d3d735d76
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'system_menu_block:welcome'
+        label: Welcome
+        label_display: '0'
+        provider: system
+        level: 1
+        depth: null
+        expand_all_items: false
+    fallback_metadata:
+      slot_definitions: null
+label: Welcome
+id: block.system_menu_block.welcome
+provider: system
+source: block
+source_local_id: 'system_menu_block:welcome'
+category: Menus

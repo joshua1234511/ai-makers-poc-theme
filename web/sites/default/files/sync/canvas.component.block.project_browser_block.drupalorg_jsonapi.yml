@@ -1,0 +1,28 @@
+uuid: 413d5c5e-8a5a-4a82-a08d-667e5e34d30c
+langcode: en
+status: true
+dependencies:
+  module:
+    - project_browser
+active_version: 5b8864b86914171c
+versioned_properties:
+  active:
+    settings:
+      default_settings:
+        id: 'project_browser_block:drupalorg_jsonapi'
+        label: 'Contrib modules'
+        label_display: '0'
+        provider: project_browser
+        paginate: true
+        page_sizes: '12, 24, 36, 48'
+        sort_options: null
+        default_sort: null
+        filters: null
+    fallback_metadata:
+      slot_definitions: null
+label: 'Contrib modules'
+id: block.project_browser_block.drupalorg_jsonapi
+provider: project_browser
+source: block
+source_local_id: 'project_browser_block:drupalorg_jsonapi'
+category: 'Project Browser'

@@ -1,0 +1,31 @@
+uuid: 583d3842-868f-4f92-895b-bb17254b8afa
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tara
+active_version: ec5a217ff9d44591
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions:
+        header_top:
+          title: 'Header Top Content'
+          description: 'Content for the header top region'
+        site_branding:
+          title: 'Site Branding'
+          description: 'Site branding block content (logo, name, slogan)'
+        primary_menu:
+          title: 'Primary Menu'
+          description: 'Primary navigation menu content'
+        search_box:
+          title: 'Search Box'
+          description: 'Search form block content'
+label: Header
+id: sdc.tara.header
+provider: tara
+source: sdc
+source_local_id: 'tara:header'
+category: Other

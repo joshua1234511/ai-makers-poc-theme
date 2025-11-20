@@ -1,0 +1,19 @@
+uuid: 1f51a735-eb7b-4455-964e-e8d9d01c75ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.system_powered_by_block
+  theme:
+    - tara
+id: tara.footer_bottom
+region: footer_bottom
+theme: tara
+component_tree:
+  -
+    uuid: 9bfcd717-593d-460c-b989-06569857c562
+    component_id: block.system_powered_by_block
+    component_version: 3332388cade78d20
+    inputs:
+      label: 'Powered by Drupal'
+      label_display: '0'

@@ -1,0 +1,37 @@
+uuid: f47e64e2-3c41-4e7e-a31a-a89c3cf58b0e
+langcode: en
+status: true
+dependencies:
+  config:
+    - canvas.component.block.local_actions_block
+    - canvas.component.block.local_tasks_block
+    - canvas.component.block.page_title_block
+  theme:
+    - tara
+id: tara.header_top
+region: header_top
+theme: tara
+component_tree:
+  -
+    uuid: 1660f17c-598d-4db0-bcfe-5eb6c90e5fbb
+    component_id: block.local_actions_block
+    component_version: 5400750e38fff980
+    inputs:
+      label: 'Primary admin actions'
+      label_display: '0'
+  -
+    uuid: 7a90aa3c-65eb-4882-9fdd-15987c589d06
+    component_id: block.local_tasks_block
+    component_version: 7ce07cbe2a7fa7ce
+    inputs:
+      label: Tabs
+      label_display: '0'
+      primary: true
+      secondary: true
+  -
+    uuid: 5fd250ba-8919-46fb-a6b5-faac2eda8dde
+    component_id: block.page_title_block
+    component_version: 62af221149ae4887
+    inputs:
+      label: 'Page title'
+      label_display: '0'

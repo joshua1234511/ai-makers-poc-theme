@@ -1,0 +1,10 @@
+uuid: a81461bb-3c3b-48f8-b4d8-2538018213d0
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tara
+id: tara.page_top
+region: page_top
+theme: tara
+component_tree: {  }

@@ -1,0 +1,10 @@
+uuid: 8c05dd82-3fee-4ace-9bc4-4c329d5035f1
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tara
+id: tara.sidebar_second
+region: sidebar_second
+theme: tara
+component_tree: {  }

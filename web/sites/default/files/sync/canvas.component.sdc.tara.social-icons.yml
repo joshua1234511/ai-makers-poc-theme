@@ -1,0 +1,19 @@
+uuid: c6aa2479-4d03-45c9-9de5-258098f83f5a
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tara
+active_version: 8fe3be948e0194e1
+versioned_properties:
+  active:
+    settings:
+      prop_field_definitions: {  }
+    fallback_metadata:
+      slot_definitions: {  }
+label: 'Social Icons'
+id: sdc.tara.social-icons
+provider: tara
+source: sdc
+source_local_id: 'tara:social-icons'
+category: Other
