@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * Single Card Component
+ *
+ * Individual card item template. This can be used within the cards component
+ * or as a standalone card.
+ *
+ * Available variables:
+ * - image: Card image URL (string)
+ * - image_alt: Image alt text (string)
+ * - title: Card title (string)
+ * - content: Card content (string/markup)
+ * - link_url: Link URL (string)
+ * - link_text: Link text (string)
+ * - show_image: Whether to show image (boolean)
+ * - show_title: Whether to show title (boolean)
+ * - show_content: Whether to show content (boolean)
+ * - show_link: Whether to show link (boolean)
+ * - image_position: Image position (string)
+ * - card_style: Card style variant (string)
+ * - class: Additional CSS classes (string)
+ */
+#}
+{%
+  set card_classes = [
+    'card',
+    'card-' ~ card_style|default('default'),
+    'card-image-' ~ image_position|default('top'),
+    class ? class : '',
+  ]|remove_empty
+%}
+
+<article{{ attributes.addClass(card_classes) }}>
+  {% if show_image and image %}
+    <div class="card-image">
+      {% if link_url %}
+        <a href="{{ link_url }}" class="card-image-link">
+          <img src="{{ image }}" alt="{{ image_alt|default(title|default('')) }}" />
+        </a>
+      {% else %}
+        <img src="{{ image }}" alt="{{ image_alt|default(title|default('')) }}" />
+      {% endif %}
+    </div>
+  {% endif %}
+  
+  <div class="card-body">
+    {% if show_title and title %}
+      <h3 class="card-title">
+        {% if link_url %}
+          <a href="{{ link_url }}">{{ title }}</a>
+        {% else %}
+          {{ title }}
+        {% endif %}
+      </h3>
+    {% endif %}
+    
+    {% if show_content and content %}
+      <div class="card-content">
+        {{ content }}
+      </div>
+    {% endif %}
+    
+    {% if show_link and link_url and link_text %}
+      <div class="card-link">
+        <a href="{{ link_url }}" class="card-button">{{ link_text }}</a>
+      </div>
+    {% endif %}
+  </div>
+</article>

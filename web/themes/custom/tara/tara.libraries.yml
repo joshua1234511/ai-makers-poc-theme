@@ -109,6 +109,13 @@ social-icons:
     component:
       components/social-icons/social-icons.css: {}
 
+# Cards Component
+cards:
+  version: VERSION
+  css:
+    component:
+      components/cards/cards.css: {}
+
 # Footer Component
 footer:
   version: VERSION

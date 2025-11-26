@@ -79,7 +79,63 @@ Site header component with logo, navigation menu, search, and social icons.
 - `primary_menu`: Primary navigation menu content
 - `search_box`: Search form block content
 
-### 3. Social Icons (`social-icons`)
+### 3. Cards (`cards`)
+
+A flexible cards component for displaying content in a card layout with images, titles, text, and links.
+
+**Usage:**
+```twig
+{{ include('tara:cards', {
+  columns: 3,
+  gap: '1.5rem',
+  layout: 'auto-fit',
+  min_card_width: '300px',
+  card_style: 'elevated',
+  show_image: true,
+  show_title: true,
+  show_content: true,
+  show_link: true,
+  image_position: 'top',
+  class: 'my-cards-class'
+}) }}
+  {# Card items content here #}
+{{ endinclude }}
+```
+
+**Props:**
+- `columns` (integer, default: 3): Number of columns for fixed layout
+- `gap` (string, default: '1rem'): Spacing between cards
+- `layout` (string, default: 'auto-fit'): Layout type - 'auto-fit', 'auto-fill', or 'fixed'
+- `min_card_width` (string, default: '300px'): Minimum width for cards
+- `card_style` (string, default: 'default'): Card style - 'default', 'elevated', 'outlined', or 'flat'
+- `show_image` (boolean, default: true): Display card images
+- `show_title` (boolean, default: true): Display card titles
+- `show_content` (boolean, default: true): Display card content
+- `show_link` (boolean, default: true): Display card links/buttons
+- `image_position` (string, default: 'top'): Image position - 'top', 'bottom', 'left', or 'right'
+- `class` (string): Additional CSS classes
+
+**Slot:**
+- `default`: Card items content
+
+**Individual Card Component (`card`):**
+
+You can also use individual cards standalone:
+
+```twig
+{{ include('tara:card', {
+  image: '/path/to/image.jpg',
+  image_alt: 'Card image',
+  title: 'Card Title',
+  content: 'Card content text',
+  link_url: '/path/to/page',
+  link_text: 'Read More',
+  card_style: 'elevated',
+  image_position: 'top'
+}) }}
+```
+
+### 4. Social Icons (`social-icons`)
 
 Social media icons component for header and footer.
 

@@ -1,0 +1,165 @@
+name: Cards
+description: 'A flexible cards component for displaying content in a card layout with images, titles, text, and links.'
+props:
+  columns:
+    type: integer
+    default: 3
+    title: 'Number of Columns'
+    description: 'Number of columns in the cards grid layout'
+  gap:
+    type: string
+    default: '1rem'
+    title: 'Gap Size'
+    description: 'Spacing between cards (e.g., 1rem, 2rem, 0.5rem)'
+  layout:
+    type: string
+    default: 'auto-fit'
+    title: 'Layout Type'
+    description: 'Grid layout type: auto-fit, auto-fill, or fixed'
+    enum:
+      - auto-fit
+      - auto-fill
+      - fixed
+  min_card_width:
+    type: string
+    default: '300px'
+    title: 'Minimum Card Width'
+    description: 'Minimum width for each card'
+  card_style:
+    type: string
+    default: 'default'
+    title: 'Card Style'
+    description: 'Card style variant'
+    enum:
+      - default
+      - elevated
+      - outlined
+      - flat
+  show_image:
+    type: boolean
+    default: true
+    title: 'Show Image'
+    description: 'Display card images if available'
+  show_title:
+    type: boolean
+    default: true
+    title: 'Show Title'
+    description: 'Display card titles'
+  show_content:
+    type: boolean
+    default: true
+    title: 'Show Content'
+    description: 'Display card content'
+  show_link:
+    type: boolean
+    default: true
+    title: 'Show Link'
+    description: 'Display card links/buttons'
+  image_position:
+    type: string
+    default: 'top'
+    title: 'Image Position'
+    description: 'Position of image in card'
+    enum:
+      - top
+      - bottom
+      - left
+      - right
+  class:
+    type: string
+    title: 'Additional CSS Classes'
+    description: 'Additional CSS classes to apply to the cards container'
+slots:
+  default:
+    title: 'Card Items'
+    description: 'Card items to display. Each item should have: image, title, content, link_url, link_text'
+    allowed_tags:
+      - div
+      - article
+      - section
+      - figure
+      - img
+      - p
+      - h1
+      - h2
+      - h3
+      - h4
+      - h5
+      - h6
+      - ul
+      - ol
+      - li
+      - a
+      - span
+      - blockquote
+      - pre
+      - code
+      - strong
+      - em
+      - b
+      - i
+      - u
+      - small
+      - sub
+      - sup
+      - mark
+      - del
+      - ins
+      - abbr
+      - dfn
+      - kbd
+      - samp
+      - var
+      - time
+      - address
+      - cite
+      - q
+      - dl
+      - dt
+      - dd
+      - table
+      - thead
+      - tbody
+      - tfoot
+      - tr
+      - th
+      - td
+      - colgroup
+      - col
+      - caption
+      - form
+      - fieldset
+      - legend
+      - label
+      - input
+      - button
+      - select
+      - datalist
+      - optgroup
+      - option
+      - textarea
+      - output
+      - progress
+      - meter
+      - details
+      - summary
+      - menu
+      - menuitem
+      - canvas
+      - svg
+      - iframe
+      - embed
+      - object
+      - param
+      - video
+      - audio
+      - source
+      - track
+      - map
+      - area
+      - script
+      - noscript
+      - template
+      - slot
+      - '*'
+library: tara/cards

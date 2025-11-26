@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Cards Component
+ *
+ * A flexible cards component for displaying content in a card layout
+ * with images, titles, text, and links.
+ *
+ * Available variables:
+ * - columns: Number of columns (integer)
+ * - gap: Gap size between cards (string)
+ * - layout: Layout type - auto-fit, auto-fill, or fixed (string)
+ * - min_card_width: Minimum width for cards (string)
+ * - card_style: Card style variant (string)
+ * - show_image: Whether to show images (boolean)
+ * - show_title: Whether to show titles (boolean)
+ * - show_content: Whether to show content (boolean)
+ * - show_link: Whether to show links (boolean)
+ * - image_position: Image position in card (string)
+ * - class: Additional CSS classes (string)
+ * - content: Card items content (slot)
+ */
+#}
+{%
+  set classes = [
+    'cards-component',
+    'cards-grid',
+    'cards-' ~ card_style,
+    'cards-image-' ~ image_position,
+    layout == 'auto-fit' ? 'cards-auto-fit' : '',
+    layout == 'auto-fill' ? 'cards-auto-fill' : '',
+    layout == 'fixed' ? 'cards-fixed' : '',
+    class ? class : '',
+  ]|remove_empty
+%}
+{%
+  set grid_style = layout == 'fixed' ? 'grid-template-columns: repeat(' ~ columns ~ ', 1fr);' : ''
+%}
+{%
+  set grid_style = grid_style ~ ' gap: ' ~ gap ~ ';'
+%}
+{% if layout != 'fixed' %}
+  {%
+    set grid_style = grid_style ~ ' grid-template-columns: repeat(' ~ layout ~ ', minmax(' ~ min_card_width ~ ', 1fr));'
+  %}
+{% endif %}
+
+<div{{ attributes.addClass(classes) }}{% if grid_style %} style="{{ grid_style }}"{% endif %}>
+  {% if content %}
+    {{ content }}
+  {% endif %}
+</div>
