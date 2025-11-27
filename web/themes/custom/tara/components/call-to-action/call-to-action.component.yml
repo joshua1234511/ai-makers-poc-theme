@@ -1,0 +1,46 @@
+name: Call to Action
+description: 'Highlighted section with heading, text, and one or two CTA buttons.'
+props:
+  heading:
+    type: string
+    title: 'Heading'
+    description: 'Main heading text for the call to action'
+  text:
+    type: string
+    title: 'Text'
+    description: 'Descriptive text content'
+  primary_button_text:
+    type: string
+    title: 'Primary Button Text'
+    description: 'Text for the primary CTA button'
+  primary_button_url:
+    type: string
+    title: 'Primary Button URL'
+    description: 'URL for the primary CTA button'
+  secondary_button_text:
+    type: string
+    title: 'Secondary Button Text'
+    description: 'Text for the secondary CTA button (optional)'
+  secondary_button_url:
+    type: string
+    title: 'Secondary Button URL'
+    description: 'URL for the secondary CTA button (optional)'
+  alignment:
+    type: string
+    default: 'center'
+    title: 'Alignment'
+    description: 'Text alignment: left, center, or right'
+  background_color:
+    type: string
+    title: 'Background Color'
+    description: 'Custom background color (CSS color value)'
+  text_color:
+    type: string
+    title: 'Text Color'
+    description: 'Custom text color (CSS color value)'
+  class:
+    type: string
+    title: 'Additional CSS Classes'
+    description: 'Additional CSS classes to apply to the component'
+library: tara/call-to-action
+

@@ -1,0 +1,68 @@
+{#
+/**
+ * @file
+ * Call to Action Component
+ *
+ * Highlighted section with heading, text, and one or two CTA buttons.
+ *
+ * Available variables:
+ * - heading: Main heading text (string)
+ * - text: Descriptive text content (string)
+ * - primary_button_text: Text for the primary CTA button (string)
+ * - primary_button_url: URL for the primary CTA button (string)
+ * - secondary_button_text: Text for the secondary CTA button (string, optional)
+ * - secondary_button_url: URL for the secondary CTA button (string, optional)
+ * - alignment: Text alignment - left, center, or right (string, default: center)
+ * - background_color: Custom background color (string, optional)
+ * - text_color: Custom text color (string, optional)
+ * - class: Additional CSS classes (string)
+ */
+#}
+{%
+  set classes = [
+    'call-to-action-component',
+    alignment ? 'cta-align-' ~ alignment : 'cta-align-center',
+    class ? class : '',
+  ]|remove_empty
+%}
+
+{%
+  set style_attributes = []
+%}
+
+{% if background_color %}
+  {% set style_attributes = style_attributes|merge(['background-color: ' ~ background_color ~ ';']) %}
+{% endif %}
+
+{% if text_color %}
+  {% set style_attributes = style_attributes|merge(['color: ' ~ text_color ~ ';']) %}
+{% endif %}
+
+<!-- Start: Call to Action -->
+<section{{ attributes.addClass(classes) }}{% if style_attributes %} style="{{ style_attributes|join(' ') }}"{% endif %}>
+  <div class="container">
+    <div class="cta-content">
+      {% if heading %}
+        <h2 class="cta-heading">{{ heading }}</h2>
+      {% endif %}
+      
+      {% if text %}
+        <div class="cta-text">{{ text }}</div>
+      {% endif %}
+      
+      {% if (primary_button_text and primary_button_url) or (secondary_button_text and secondary_button_url) %}
+        <div class="cta-buttons">
+          {% if primary_button_text and primary_button_url %}
+            <a href="{{ primary_button_url }}" class="cta-button cta-button-primary">{{ primary_button_text }}</a>
+          {% endif %}
+          
+          {% if secondary_button_text and secondary_button_url %}
+            <a href="{{ secondary_button_url }}" class="cta-button cta-button-secondary">{{ secondary_button_text }}</a>
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+<!-- End: Call to Action -->
+

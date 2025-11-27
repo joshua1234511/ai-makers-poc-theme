@@ -1,0 +1,47 @@
+{#
+/**
+ * @file
+ * Accordion Component
+ *
+ * Expand/collapse component for FAQs or grouped content.
+ *
+ * Available variables:
+ * - allow_multiple: Allow multiple items open at once (boolean, default: false)
+ * - first_item_open: Open first item by default (boolean, default: false)
+ * - icon_position: Icon position - left or right (string, default: right)
+ * - class: Additional CSS classes (string)
+ * - items: Accordion items content (slot)
+ *
+ * Expected structure in items slot:
+ * <div class="accordion-item">
+ *   <button class="accordion-header" type="button">
+ *     <span class="accordion-title">Item Title</span>
+ *     <span class="accordion-icon" aria-hidden="true"></span>
+ *   </button>
+ *   <div class="accordion-content">
+ *     <div class="accordion-content-inner">
+ *       Item content here
+ *     </div>
+ *   </div>
+ * </div>
+ */
+#}
+{%
+  set classes = [
+    'accordion-component',
+    icon_position ? 'accordion-icon-' ~ icon_position : 'accordion-icon-right',
+    allow_multiple ? 'accordion-multiple' : 'accordion-single',
+    class ? class : '',
+  ]|remove_empty
+%}
+
+<!-- Start: Accordion -->
+<div{{ attributes.addClass(classes) }} data-allow-multiple="{{ allow_multiple ? 'true' : 'false' }}" data-first-open="{{ first_item_open ? 'true' : 'false' }}">
+  {% if items %}
+    <div class="accordion-items">
+      {{ items }}
+    </div>
+  {% endif %}
+</div>
+<!-- End: Accordion -->
+

@@ -214,6 +214,102 @@ Site footer component with multiple footer regions, copyright, social icons, and
 - `footer_fourth`: Fourth footer block content
 - `footer_bottom`: Footer bottom region content
 
+### 5. Call to Action (`call-to-action`)
+
+Highlighted section with heading, text, and one or two CTA buttons.
+
+**Usage:**
+```twig
+{{ include('tara:call-to-action', {
+  heading: 'Get Started Today',
+  text: 'Join thousands of satisfied customers and transform your business.',
+  primary_button_text: 'Sign Up Now',
+  primary_button_url: '/signup',
+  secondary_button_text: 'Learn More',
+  secondary_button_url: '/about',
+  alignment: 'center',
+  background_color: '#0073e6',
+  text_color: '#ffffff',
+  class: 'my-custom-class'
+}) }}
+```
+
+**Props:**
+- `heading` (string): Main heading text for the call to action
+- `text` (string): Descriptive text content
+- `primary_button_text` (string): Text for the primary CTA button
+- `primary_button_url` (string): URL for the primary CTA button
+- `secondary_button_text` (string, optional): Text for the secondary CTA button
+- `secondary_button_url` (string, optional): URL for the secondary CTA button
+- `alignment` (string, default: 'center'): Text alignment - 'left', 'center', or 'right'
+- `background_color` (string, optional): Custom background color (CSS color value)
+- `text_color` (string, optional): Custom text color (CSS color value)
+- `class` (string): Additional CSS classes
+
+### 6. Accordion (`accordion`)
+
+Expand/collapse component for FAQs or grouped content.
+
+**Usage:**
+```twig
+{{ include('tara:accordion', {
+  allow_multiple: false,
+  first_item_open: true,
+  icon_position: 'right',
+  class: 'my-custom-class'
+}) }}
+  {% slot items %}
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="accordion-title">Question 1</span>
+        <span class="accordion-icon" aria-hidden="true"></span>
+      </button>
+      <div class="accordion-content">
+        <div class="accordion-content-inner">
+          <p>Answer to question 1 goes here.</p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button class="accordion-header" type="button">
+        <span class="accordion-title">Question 2</span>
+        <span class="accordion-icon" aria-hidden="true"></span>
+      </button>
+      <div class="accordion-content">
+        <div class="accordion-content-inner">
+          <p>Answer to question 2 goes here.</p>
+        </div>
+      </div>
+    </div>
+  {% endslot %}
+{{ endinclude }}
+```
+
+**Props:**
+- `allow_multiple` (boolean, default: false): Allow multiple accordion items to be open at the same time
+- `first_item_open` (boolean, default: false): Open the first accordion item by default
+- `icon_position` (string, default: 'right'): Position of the expand/collapse icon - 'left' or 'right'
+- `class` (string): Additional CSS classes
+
+**Slot:**
+- `items`: Accordion items with proper structure (see usage example above)
+
+**Accordion Item Structure:**
+Each accordion item should follow this structure:
+```html
+<div class="accordion-item">
+  <button class="accordion-header" type="button">
+    <span class="accordion-title">Item Title</span>
+    <span class="accordion-icon" aria-hidden="true"></span>
+  </button>
+  <div class="accordion-content">
+    <div class="accordion-content-inner">
+      <!-- Item content here -->
+    </div>
+  </div>
+</div>
+```
+
 ## Integration with Drupal Canvas
 
 These components are designed to work with Drupal Canvas. You can:
@@ -240,5 +336,7 @@ Component libraries are defined in `tara.libraries.yml`:
 - `tara/header`
 - `tara/social-icons`
 - `tara/footer`
+- `tara/call-to-action`
+- `tara/accordion`
 
 These libraries are automatically loaded when the components are used.

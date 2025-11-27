@@ -127,3 +127,22 @@ footer:
   dependencies:
     - core/drupal
     - core/once
+
+# Call to Action Component
+call-to-action:
+  version: VERSION
+  css:
+    component:
+      components/call-to-action/call-to-action.css: {}
+
+# Accordion Component
+accordion:
+  version: VERSION
+  css:
+    component:
+      components/accordion/accordion.css: {}
+  js:
+    components/accordion/accordion.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

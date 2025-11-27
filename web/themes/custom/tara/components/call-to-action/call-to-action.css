@@ -1,0 +1,160 @@
+/**
+ * @file
+ * Call to Action Component Styles
+ */
+
+/* Call to Action container */
+.call-to-action-component {
+  position: relative;
+  width: 100%;
+  padding: 3rem 0;
+  margin: 2rem 0;
+  background-color: var(--color-primary, #0073e6);
+  color: #ffffff;
+}
+
+/* Content wrapper */
+.call-to-action-component .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.call-to-action-component .cta-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Alignment variants */
+.call-to-action-component.cta-align-center .cta-content {
+  align-items: center;
+  text-align: center;
+}
+
+.call-to-action-component.cta-align-left .cta-content {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.call-to-action-component.cta-align-right .cta-content {
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Heading */
+.call-to-action-component .cta-heading {
+  margin: 0;
+  font-family: var(--font-heading, inherit);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: inherit;
+}
+
+/* Text */
+.call-to-action-component .cta-text {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: inherit;
+  max-width: 800px;
+}
+
+.call-to-action-component.cta-align-center .cta-text {
+  margin: 0 auto;
+}
+
+/* Buttons container */
+.call-to-action-component .cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.call-to-action-component.cta-align-center .cta-buttons {
+  justify-content: center;
+}
+
+.call-to-action-component.cta-align-left .cta-buttons {
+  justify-content: flex-start;
+}
+
+.call-to-action-component.cta-align-right .cta-buttons {
+  justify-content: flex-end;
+}
+
+/* Button base styles */
+.call-to-action-component .cta-button {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+/* Primary button */
+.call-to-action-component .cta-button-primary {
+  background-color: #ffffff;
+  color: var(--color-primary, #0073e6);
+  border-color: #ffffff;
+}
+
+.call-to-action-component .cta-button-primary:hover,
+.call-to-action-component .cta-button-primary:focus {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+  text-decoration: none;
+}
+
+/* Secondary button */
+.call-to-action-component .cta-button-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.call-to-action-component .cta-button-secondary:hover,
+.call-to-action-component .cta-button-secondary:focus {
+  background-color: #ffffff;
+  color: var(--color-primary, #0073e6);
+  border-color: #ffffff;
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .call-to-action-component {
+    padding: 2rem 0;
+  }
+
+  .call-to-action-component .cta-heading {
+    font-size: 2rem;
+  }
+
+  .call-to-action-component .cta-text {
+    font-size: 1rem;
+  }
+
+  .call-to-action-component .cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .call-to-action-component .cta-button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .call-to-action-component.cta-align-center .cta-button {
+    margin: 0 auto;
+  }
+}
+

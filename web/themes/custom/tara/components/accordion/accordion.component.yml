@@ -1,0 +1,113 @@
+name: Accordion
+description: 'Expand/collapse component for FAQs or grouped content.'
+props:
+  allow_multiple:
+    type: boolean
+    default: false
+    title: 'Allow Multiple Open'
+    description: 'Allow multiple accordion items to be open at the same time'
+  first_item_open:
+    type: boolean
+    default: false
+    title: 'First Item Open'
+    description: 'Open the first accordion item by default'
+  icon_position:
+    type: string
+    default: 'right'
+    title: 'Icon Position'
+    description: 'Position of the expand/collapse icon: left or right'
+    enum:
+      - left
+      - right
+  class:
+    type: string
+    title: 'Additional CSS Classes'
+    description: 'Additional CSS classes to apply to the accordion'
+slots:
+  items:
+    title: 'Accordion Items'
+    description: 'Accordion items with title and content'
+    allowed_tags:
+      - div
+      - article
+      - section
+      - h1
+      - h2
+      - h3
+      - h4
+      - h5
+      - h6
+      - p
+      - ul
+      - ol
+      - li
+      - a
+      - span
+      - strong
+      - em
+      - b
+      - i
+      - u
+      - small
+      - mark
+      - del
+      - ins
+      - abbr
+      - dfn
+      - kbd
+      - samp
+      - var
+      - time
+      - address
+      - cite
+      - q
+      - dl
+      - dt
+      - dd
+      - table
+      - thead
+      - tbody
+      - tfoot
+      - tr
+      - th
+      - td
+      - colgroup
+      - col
+      - caption
+      - form
+      - fieldset
+      - legend
+      - label
+      - input
+      - button
+      - select
+      - datalist
+      - optgroup
+      - option
+      - textarea
+      - output
+      - progress
+      - meter
+      - details
+      - summary
+      - menu
+      - menuitem
+      - canvas
+      - svg
+      - iframe
+      - embed
+      - object
+      - param
+      - video
+      - audio
+      - source
+      - track
+      - map
+      - area
+      - script
+      - noscript
+      - template
+      - slot
+      - '*'
+library: tara/accordion
+
