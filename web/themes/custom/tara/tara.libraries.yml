@@ -146,3 +146,17 @@ accordion:
   dependencies:
     - core/drupal
     - core/once
+
+# Hero Banner Component
+hero-banner:
+  version: VERSION
+  css:
+    component:
+      components/hero-banner/hero-banner.css: {}
+
+# Button Component
+button:
+  version: VERSION
+  css:
+    component:
+      components/button/button.css: {}

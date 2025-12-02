@@ -1,0 +1,38 @@
+name: Button
+description: 'A reusable button component with primary and secondary variants.'
+props:
+  text:
+    type: string
+    title: 'Button Text'
+    description: 'Text displayed on the button'
+  url:
+    type: string
+    title: 'Button URL'
+    description: 'URL the button links to'
+  variant:
+    type: string
+    default: 'primary'
+    title: 'Button Variant'
+    description: 'Button style variant'
+    enum:
+      - primary
+      - secondary
+  size:
+    type: string
+    default: 'medium'
+    title: 'Button Size'
+    description: 'Button size'
+    enum:
+      - small
+      - medium
+      - large
+  full_width:
+    type: boolean
+    default: false
+    title: 'Full Width'
+    description: 'Make button full width'
+  class:
+    type: string
+    title: 'Additional CSS Classes'
+    description: 'Additional CSS classes to apply to the button'
+library: tara/button

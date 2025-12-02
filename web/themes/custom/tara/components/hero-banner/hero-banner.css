@@ -1,0 +1,170 @@
+/**
+ * @file
+ * Hero Banner Component Styles
+ */
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Overlay */
+.hero-banner-overlay-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+/* Content Wrapper */
+.hero-banner-content-wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 3;
+}
+
+/* Content Width Variants */
+.hero-banner-width-container .hero-banner-content-wrapper {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.hero-banner-width-narrow .hero-banner-content-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.hero-banner-width-full .hero-banner-content-wrapper {
+  width: 100%;
+  padding: 0 2rem;
+}
+
+/* Content */
+.hero-banner-content {
+  position: relative;
+  padding: 4rem 0;
+  color: #ffffff;
+}
+
+/* Text Alignment */
+.hero-banner-align-left .hero-banner-content {
+  text-align: left;
+}
+
+.hero-banner-align-center .hero-banner-content {
+  text-align: center;
+}
+
+.hero-banner-align-right .hero-banner-content {
+  text-align: right;
+}
+
+/* Heading */
+.hero-banner-heading {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0 0 1.5rem 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Subheading */
+.hero-banner-subheading {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0 0 2rem 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  max-width: 800px;
+}
+
+.hero-banner-align-center .hero-banner-subheading {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-banner-align-right .hero-banner-subheading {
+  margin-left: auto;
+}
+
+/* Buttons Container */
+.hero-banner-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.hero-banner-align-center .hero-banner-buttons {
+  justify-content: center;
+}
+
+.hero-banner-align-right .hero-banner-buttons {
+  justify-content: flex-end;
+}
+
+/* Buttons - using shared button component */
+.hero-banner-buttons .button {
+  /* Additional hero-banner specific button styles if needed */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-banner-heading {
+    font-size: 2.5rem;
+  }
+  
+  .hero-banner-subheading {
+    font-size: 1.2rem;
+  }
+  
+  .hero-banner-content {
+    padding: 3rem 0;
+  }
+  
+  .hero-banner-buttons .button {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .hero-banner-buttons {
+    flex-direction: column;
+  }
+  
+  .hero-banner-width-full .hero-banner-content-wrapper {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-banner-heading {
+    font-size: 2rem;
+  }
+  
+  .hero-banner-subheading {
+    font-size: 1rem;
+  }
+  
+  .hero-banner-content {
+    padding: 2rem 0;
+  }
+  
+  .hero-banner-buttons .button {
+    /* Button component handles responsive sizing */
+  }
+}

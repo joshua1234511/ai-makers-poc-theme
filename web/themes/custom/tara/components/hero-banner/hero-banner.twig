@@ -1,0 +1,116 @@
+{#
+/**
+ * @file
+ * Hero Banner Component
+ *
+ * A hero banner component with background image, heading, text, and call-to-action buttons.
+ *
+ * Available variables:
+ * - background_image: Background image URL (string)
+ * - background_color: Background color (string)
+ * - overlay: Whether to show overlay (boolean)
+ * - overlay_opacity: Overlay opacity (number)
+ * - heading: Main heading text (string)
+ * - subheading: Subheading text (string)
+ * - primary_button_text: Primary button text (string)
+ * - primary_button_url: Primary button URL (string)
+ * - secondary_button_text: Secondary button text (string)
+ * - secondary_button_url: Secondary button URL (string)
+ * - text_alignment: Text alignment (string)
+ * - height: Banner height (string)
+ * - min_height: Minimum height (string)
+ * - content_width: Content width constraint (string)
+ * - class: Additional CSS classes (string)
+ * - content: Custom content slot (optional)
+ */
+#}
+{%
+  set classes = [
+    'hero-banner',
+    'hero-banner-align-' ~ text_alignment,
+    'hero-banner-width-' ~ content_width,
+    overlay ? 'hero-banner-overlay' : '',
+    class ? class : '',
+  ]|remove_empty
+%}
+{%
+  set style_attributes = []
+%}
+{% if background_image %}
+  {%
+    set style_attributes = style_attributes|merge(['background-image: url(' ~ background_image ~ ');'])
+  %}
+{% endif %}
+{% if background_color %}
+  {%
+    set style_attributes = style_attributes|merge(['background-color: ' ~ background_color ~ ';'])
+  %}
+{% endif %}
+{% if height %}
+  {%
+    set style_attributes = style_attributes|merge(['height: ' ~ height ~ ';'])
+  %}
+{% endif %}
+{% if min_height %}
+  {%
+    set style_attributes = style_attributes|merge(['min-height: ' ~ min_height ~ ';'])
+  %}
+{% endif %}
+{%
+  set style_string = style_attributes|join(' ')
+%}
+
+<section{{ attributes.addClass(classes) }}{% if style_string %} style="{{ style_string }}"{% endif %}>
+  {% if overlay %}
+    <div class="hero-banner-overlay-layer" style="opacity: {{ overlay_opacity }};"></div>
+  {% endif %}
+  
+  <div class="hero-banner-content-wrapper">
+    {% if content_width == 'container' %}
+      <div class="container">
+    {% elseif content_width == 'narrow' %}
+      <div class="container hero-banner-narrow">
+    {% endif %}
+    
+      <div class="hero-banner-content">
+        {% if content %}
+          {{ content }}
+        {% else %}
+          {% if heading %}
+            <h1 class="hero-banner-heading">{{ heading }}</h1>
+          {% endif %}
+          
+          {% if subheading %}
+            <p class="hero-banner-subheading">{{ subheading }}</p>
+          {% endif %}
+          
+          {% if primary_button_text and primary_button_url or secondary_button_text and secondary_button_url %}
+            <div class="hero-banner-buttons">
+              {% if primary_button_text and primary_button_url %}
+                {{ include('tara:button', {
+                  text: primary_button_text,
+                  url: primary_button_url,
+                  variant: 'primary',
+                  size: 'large',
+                  class: 'hero-banner-button'
+                }) }}
+              {% endif %}
+              {% if secondary_button_text and secondary_button_url %}
+                {{ include('tara:button', {
+                  text: secondary_button_text,
+                  url: secondary_button_url,
+                  variant: 'secondary',
+                  size: 'large',
+                  class: 'hero-banner-button'
+                }) }}
+              {% endif %}
+            </div>
+          {% endif %}
+        {% endif %}
+      </div>
+    
+    {% if content_width == 'container' or content_width == 'narrow' %}
+      </div>
+    {% endif %}
+  </div>
+</section>

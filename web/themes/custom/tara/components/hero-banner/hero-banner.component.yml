@@ -1,0 +1,173 @@
+name: Hero Banner
+description: 'A hero banner component with background image, heading, text, and call-to-action buttons.'
+props:
+  background_image:
+    type: string
+    title: 'Background Image URL'
+    description: 'URL path to the background image'
+  background_color:
+    type: string
+    title: 'Background Color'
+    description: 'Background color (CSS color value). Used if no background image is provided.'
+  overlay:
+    type: boolean
+    default: false
+    title: 'Show Overlay'
+    description: 'Display a dark overlay over the background image'
+  overlay_opacity:
+    type: number
+    default: 0.5
+    title: 'Overlay Opacity'
+    description: 'Opacity of the overlay (0.0 to 1.0)'
+  heading:
+    type: string
+    title: 'Heading'
+    description: 'Main heading text'
+  subheading:
+    type: string
+    title: 'Subheading'
+    description: 'Subheading or description text'
+  primary_button_text:
+    type: string
+    title: 'Primary Button Text'
+    description: 'Text for the primary call-to-action button'
+  primary_button_url:
+    type: string
+    title: 'Primary Button URL'
+    description: 'URL for the primary button'
+  secondary_button_text:
+    type: string
+    title: 'Secondary Button Text'
+    description: 'Text for the secondary button (optional)'
+  secondary_button_url:
+    type: string
+    title: 'Secondary Button URL'
+    description: 'URL for the secondary button (optional)'
+  text_alignment:
+    type: string
+    default: 'center'
+    title: 'Text Alignment'
+    description: 'Alignment of text content'
+    enum:
+      - left
+      - center
+      - right
+  height:
+    type: string
+    default: '600px'
+    title: 'Banner Height'
+    description: 'Height of the hero banner (e.g., 600px, 80vh, 100vh)'
+  min_height:
+    type: string
+    default: '400px'
+    title: 'Minimum Height'
+    description: 'Minimum height of the hero banner'
+  content_width:
+    type: string
+    default: 'container'
+    title: 'Content Width'
+    description: 'Width constraint for content - container, full, or custom'
+    enum:
+      - container
+      - full
+      - narrow
+  class:
+    type: string
+    title: 'Additional CSS Classes'
+    description: 'Additional CSS classes to apply to the hero banner'
+slots:
+  default:
+    title: 'Custom Content'
+    description: 'Custom content to display in the hero banner (optional, overrides heading/subheading)'
+    allowed_tags:
+      - div
+      - article
+      - section
+      - figure
+      - img
+      - p
+      - h1
+      - h2
+      - h3
+      - h4
+      - h5
+      - h6
+      - ul
+      - ol
+      - li
+      - a
+      - span
+      - blockquote
+      - pre
+      - code
+      - strong
+      - em
+      - b
+      - i
+      - u
+      - small
+      - sub
+      - sup
+      - mark
+      - del
+      - ins
+      - abbr
+      - dfn
+      - kbd
+      - samp
+      - var
+      - time
+      - address
+      - cite
+      - q
+      - dl
+      - dt
+      - dd
+      - table
+      - thead
+      - tbody
+      - tfoot
+      - tr
+      - th
+      - td
+      - colgroup
+      - col
+      - caption
+      - form
+      - fieldset
+      - legend
+      - label
+      - input
+      - button
+      - select
+      - datalist
+      - optgroup
+      - option
+      - textarea
+      - output
+      - progress
+      - meter
+      - details
+      - summary
+      - menu
+      - menuitem
+      - canvas
+      - svg
+      - iframe
+      - embed
+      - object
+      - param
+      - video
+      - audio
+      - source
+      - track
+      - map
+      - area
+      - script
+      - noscript
+      - template
+      - slot
+      - '*'
+library: tara/hero-banner
+dependencies:
+  - tara/button

@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Button Component
+ *
+ * A reusable button component with primary and secondary variants.
+ *
+ * Available variables:
+ * - text: Button text (string)
+ * - url: Button URL (string)
+ * - variant: Button variant - primary or secondary (string)
+ * - size: Button size - small, medium, or large (string)
+ * - full_width: Whether button is full width (boolean)
+ * - class: Additional CSS classes (string)
+ */
+#}
+{%
+  set classes = [
+    'button',
+    'button-' ~ variant,
+    'button-size-' ~ size,
+    full_width ? 'button-full-width' : '',
+    class ? class : '',
+  ]|remove_empty
+%}
+
+<a href="{{ url }}"{{ attributes.addClass(classes) }}>
+  {{ text }}
+</a>

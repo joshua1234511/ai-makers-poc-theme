@@ -310,6 +310,79 @@ Each accordion item should follow this structure:
 </div>
 ```
 
+### 7. Hero Banner (`hero-banner`)
+
+A hero banner component with background image, heading, text, and call-to-action buttons.
+
+**Usage:**
+```twig
+{{ include('tara:hero-banner', {
+  background_image: '/path/to/hero-image.jpg',
+  background_color: '#0073e6',
+  overlay: true,
+  overlay_opacity: 0.5,
+  heading: 'Welcome to Our Site',
+  subheading: 'Discover amazing products and services that will transform your business.',
+  primary_button_text: 'Get Started',
+  primary_button_url: '/signup',
+  secondary_button_text: 'Learn More',
+  secondary_button_url: '/about',
+  text_alignment: 'center',
+  height: '600px',
+  min_height: '400px',
+  content_width: 'container',
+  class: 'my-hero-class'
+}) }}
+```
+
+**Props:**
+- `background_image` (string): URL path to the background image
+- `background_color` (string): Background color (CSS color value). Used if no background image is provided
+- `overlay` (boolean, default: false): Display a dark overlay over the background image
+- `overlay_opacity` (number, default: 0.5): Opacity of the overlay (0.0 to 1.0)
+- `heading` (string): Main heading text
+- `subheading` (string): Subheading or description text
+- `primary_button_text` (string): Text for the primary call-to-action button
+- `primary_button_url` (string): URL for the primary button
+- `secondary_button_text` (string, optional): Text for the secondary button
+- `secondary_button_url` (string, optional): URL for the secondary button
+- `text_alignment` (string, default: 'center'): Alignment of text content - 'left', 'center', or 'right'
+- `height` (string, default: '600px'): Height of the hero banner (e.g., 600px, 80vh, 100vh)
+- `min_height` (string, default: '400px'): Minimum height of the hero banner
+- `content_width` (string, default: 'container'): Width constraint for content - 'container', 'full', or 'narrow'
+- `class` (string): Additional CSS classes
+
+**Slot:**
+- `default`: Custom content to display in the hero banner (optional, overrides heading/subheading)
+
+**Note:** The hero-banner component reuses the `button` component for its CTA buttons, ensuring consistent button styling across the theme.
+
+### 8. Button (`button`)
+
+A reusable button component with primary and secondary variants.
+
+**Usage:**
+```twig
+{{ include('tara:button', {
+  text: 'Click Me',
+  url: '/path/to/page',
+  variant: 'primary',
+  size: 'medium',
+  full_width: false,
+  class: 'my-button-class'
+}) }}
+```
+
+**Props:**
+- `text` (string): Text displayed on the button
+- `url` (string): URL the button links to
+- `variant` (string, default: 'primary'): Button style variant - 'primary' or 'secondary'
+- `size` (string, default: 'medium'): Button size - 'small', 'medium', or 'large'
+- `full_width` (boolean, default: false): Make button full width
+- `class` (string): Additional CSS classes
+
+**Note:** This component is used internally by `hero-banner` and `call-to-action` components, but can also be used standalone.
+  
 ## Integration with Drupal Canvas
 
 These components are designed to work with Drupal Canvas. You can:
@@ -338,5 +411,7 @@ Component libraries are defined in `tara.libraries.yml`:
 - `tara/footer`
 - `tara/call-to-action`
 - `tara/accordion`
+- `tara/hero-banner`
+- `tara/button`
 
 These libraries are automatically loaded when the components are used.
