@@ -160,3 +160,15 @@ button:
   css:
     component:
       components/button/button.css: {}
+
+# Modal Component
+modal:
+  version: VERSION
+  css:
+    component:
+      components/modal/modal.css: {}
+  js:
+    components/modal/modal.js: {}
+  dependencies:
+    - core/drupal
+    - core/once

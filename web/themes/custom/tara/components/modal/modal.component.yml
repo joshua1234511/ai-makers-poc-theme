@@ -1,0 +1,52 @@
+name: Modal
+description: 'Modal dialog component for displaying content in an overlay.'
+props:
+  modal_id:
+    type: string
+    title: 'Modal ID'
+    description: 'Unique identifier for the modal (required for multiple modals)'
+  trigger_text:
+    type: string
+    default: 'Open Modal'
+    title: 'Trigger Button Text'
+    description: 'Text for the button that opens the modal'
+  trigger_class:
+    type: string
+    title: 'Trigger Button Class'
+    description: 'Additional CSS classes for the trigger button'
+  modal_title:
+    type: string
+    title: 'Modal Title'
+    description: 'Title/heading for the modal'
+  modal_size:
+    type: string
+    default: 'medium'
+    title: 'Modal Size'
+    description: 'Size of the modal: small, medium, large, or fullscreen'
+    enum:
+      - small
+      - medium
+      - large
+      - fullscreen
+  close_on_backdrop:
+    type: boolean
+    default: true
+    title: 'Close on Backdrop Click'
+    description: 'Close modal when clicking outside the modal content'
+  show_close_button:
+    type: boolean
+    default: true
+    title: 'Show Close Button'
+    description: 'Display close button in modal header'
+  class:
+    type: string
+    title: 'Additional CSS Classes'
+    description: 'Additional CSS classes to apply to the modal'
+slots:
+  trigger:
+    title: 'Custom Trigger'
+    description: 'Custom trigger element (button, link, etc.) to open the modal'
+  content:
+    title: 'Modal Content'
+    description: 'Content to display inside the modal'
+library: tara/modal

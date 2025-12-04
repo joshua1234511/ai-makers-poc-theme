@@ -383,6 +383,101 @@ A reusable button component with primary and secondary variants.
 
 **Note:** This component is used internally by `hero-banner` and `call-to-action` components, but can also be used standalone.
   
+### 9. Modal (`modal`)
+
+Modal dialog component for displaying content in an overlay.
+
+**Usage:**
+```twig
+{{ include('tara:modal', {
+  modal_id: 'my-modal',
+  trigger_text: 'Open Modal',
+  modal_title: 'Modal Title',
+  modal_size: 'medium',
+  close_on_backdrop: true,
+  show_close_button: true,
+  class: 'my-custom-class'
+}) }}
+  {% slot content %}
+    <p>Modal content goes here.</p>
+    <p>You can include any HTML content.</p>
+  {% endslot %}
+{{ endinclude }}**With custom trigger:**
+{{ include('tara:modal', {
+  modal_id: 'custom-modal',
+  modal_title: 'Custom Trigger Modal',
+  modal_size: 'large'
+}) }}
+  {% slot trigger %}
+    <a href="#" class="custom-link">Click to open modal</a>
+  {% endslot %}
+  {% slot content %}
+    <p>Modal content here.</p>
+  {% endslot %}
+{{ endinclude }}
+```
+
+**Props:**
+- `modal_id` (string, required): Unique identifier for the modal
+- `trigger_text` (string, default: 'Open Modal'): Text for the trigger button
+- `trigger_class` (string): Additional CSS classes for the trigger button
+- `modal_title` (string): Title/heading for the modal
+- `modal_size` (string, default: 'medium'): Size of the modal - 'small', 'medium', 'large', or 'fullscreen'
+- `close_on_backdrop` (boolean, default: true): Close modal when clicking outside
+- `show_close_button` (boolean, default: true): Display close button in modal header
+- `class` (string): Additional CSS classes
+
+**Slots:**
+- `trigger`: Custom trigger element (button, link, etc.) to open the modal
+- `content`: Content to display inside the modal
+
+**Features:**
+- Keyboard accessible (Escape to close, Tab navigation)
+- Focus trap (keeps focus within modal)
+- Click outside to close (configurable)
+- Multiple size options
+- Responsive design
+- ARIA attributes for screen readers
+
+With custom trigger:
+
+```twig
+{{ include('tara:modal', {
+  modal_id: 'custom-modal',
+  modal_title: 'Custom Trigger Modal',
+  modal_size: 'large'
+}) }}
+  {% slot trigger %}
+    <a href="#" class="custom-link">Click to open modal</a>
+  {% endslot %}
+  {% slot content %}
+    <p>Modal content here.</p>
+  {% endslot %}
+{{ endinclude }}
+```
+
+***Props:***
+- `modal_id`(string, required): Unique identifier for the modal
+- `trigger_text` (string, default: 'Open Modal'): Text for the trigger button
+- `trigger_class` (string): Additional CSS classes for the trigger button
+- `modal_title` (string): Title/heading for the modal
+- `modal_size` (string, default: 'medium'): Size of the modal - 'small', 'medium', 'large', or 'fullscreen'
+- `close_on_backdrop` (boolean, default: true): Close modal when clicking outside
+- `show_close_button` (boolean, default: true): Display close button in modal header
+- `class` (string): Additional CSS classes
+
+***Slots:***
+- trigger: Custom trigger element (button, link, etc.) to open the modal
+- content: Content to display inside the modal
+
+***Features:***
+- Keyboard accessible (Escape to close, Tab navigation)
+- Focus trap (keeps focus within modal)
+- Click outside to close (configurable)
+- Multiple size options
+- Responsive design
+- ARIA attributes for screen readers
+
 ## Integration with Drupal Canvas
 
 These components are designed to work with Drupal Canvas. You can:
@@ -413,5 +508,6 @@ Component libraries are defined in `tara.libraries.yml`:
 - `tara/accordion`
 - `tara/hero-banner`
 - `tara/button`
+- `tara/modal`
 
 These libraries are automatically loaded when the components are used.

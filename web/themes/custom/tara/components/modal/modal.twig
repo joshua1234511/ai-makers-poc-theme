@@ -1,0 +1,71 @@
+{#
+/**
+ * @file
+ * Modal Component
+ *
+ * Modal dialog component for displaying content in an overlay.
+ *
+ * Available variables:
+ * - modal_id: Unique identifier for the modal (string, required)
+ * - trigger_text: Text for trigger button (string, default: 'Open Modal')
+ * - trigger_class: Additional CSS classes for trigger button (string)
+ * - modal_title: Title/heading for the modal (string)
+ * - modal_size: Size of the modal - small, medium, large, fullscreen (string, default: 'medium')
+ * - close_on_backdrop: Close on backdrop click (boolean, default: true)
+ * - show_close_button: Show close button (boolean, default: true)
+ * - class: Additional CSS classes (string)
+ * - trigger: Custom trigger element (slot, optional)
+ * - content: Modal content (slot)
+ */
+#}
+{%
+  set modal_id = modal_id ?: 'modal-' ~ random()
+  set classes = [
+    'modal-component',
+    modal_size ? 'modal-size-' ~ modal_size : 'modal-size-medium',
+    class ? class : '',
+  ]|remove_empty
+%}
+
+
+<div{{ attributes.addClass(classes) }} data-modal-id="{{ modal_id }}" data-close-on-backdrop="{{ close_on_backdrop ? 'true' : 'false' }}">
+  {# Trigger Button #}
+  {% if trigger %}
+    <div class="modal-trigger-wrapper">
+      {{ trigger }}
+    </div>
+  {% else %}
+    <button type="button" class="modal-trigger {{ trigger_class }}" data-modal-target="{{ modal_id }}" aria-haspopup="dialog" aria-expanded="false">
+      {{ trigger_text }}
+    </button>
+  {% endif %}
+
+  {# Modal Overlay #}
+  <div class="modal-overlay" id="modal-overlay-{{ modal_id }}" role="dialog" aria-modal="true" aria-labelledby="modal-title-{{ modal_id }}" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-container">
+      <div class="modal-content">
+        {# Modal Header #}
+        {% if modal_title or show_close_button %}
+          <div class="modal-header">
+            {% if modal_title %}
+              <h2 class="modal-title" id="modal-title-{{ modal_id }}">{{ modal_title }}</h2>
+            {% endif %}
+            {% if show_close_button %}
+              <button type="button" class="modal-close" aria-label="Close modal" data-modal-close="{{ modal_id }}">
+                <span class="modal-close-icon" aria-hidden="true">&times;</span>
+              </button>
+            {% endif %}
+          </div>
+        {% endif %}
+
+        {# Modal Body #}
+        <div class="modal-body">
+          {% if content %}
+            {{ content }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
