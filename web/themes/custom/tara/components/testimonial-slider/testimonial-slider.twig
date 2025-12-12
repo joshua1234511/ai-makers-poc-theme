@@ -1,0 +1,52 @@
+{#
+/**
+ * @file
+ * Testimonial Slider Component
+ *
+ * A rotating testimonials component with quote, author, and photo.
+ *
+ * Available variables:
+ * - autoplay: Whether to autoplay (boolean)
+ * - autoplay_speed: Autoplay speed in milliseconds (integer)
+ * - show_dots: Whether to show navigation dots (boolean)
+ * - show_arrows: Whether to show navigation arrows (boolean)
+ * - transition_effect: Transition effect type (string)
+ * - alignment: Text alignment (string)
+ * - show_quote_icon: Whether to show quote icon (boolean)
+ * - class: Additional CSS classes (string)
+ * - content: Testimonial items content (slot)
+ */
+#}
+{%
+  set classes = [
+    'testimonial-slider',
+    'testimonial-slider-effect-' ~ transition_effect,
+    'testimonial-slider-align-' ~ alignment,
+    class ? class : '',
+  ]|remove_empty
+%}
+
+<section{{ attributes.addClass(classes) }} data-autoplay="{{ autoplay ? 'true' : 'false' }}" data-autoplay-speed="{{ autoplay_speed }}" data-transition="{{ transition_effect }}">
+  <div class="container">
+    <div class="testimonial-slider-wrapper">
+      <div class="testimonial-slider-track">
+        {% if content %}
+          {{ content }}
+        {% endif %}
+      </div>
+      
+      {% if show_arrows %}
+        <button class="testimonial-slider-arrow testimonial-slider-prev" aria-label="Previous testimonial">
+          <span class="testimonial-slider-arrow-icon" aria-hidden="true">‹</span>
+        </button>
+        <button class="testimonial-slider-arrow testimonial-slider-next" aria-label="Next testimonial">
+          <span class="testimonial-slider-arrow-icon" aria-hidden="true">›</span>
+        </button>
+      {% endif %}
+      
+      {% if show_dots %}
+        <div class="testimonial-slider-dots" role="tablist"></div>
+      {% endif %}
+    </div>
+  </div>
+</section>

@@ -382,6 +382,80 @@ A reusable button component with primary and secondary variants.
 - `class` (string): Additional CSS classes
 
 **Note:** This component is used internally by `hero-banner` and `call-to-action` components, but can also be used standalone.
+
+### 9. Testimonial Slider (`testimonial-slider`)
+
+A rotating testimonials component with quote, author, and photo.
+
+**Usage:**
+```twig
+{{ include('tara:testimonial-slider', {
+  autoplay: true,
+  autoplay_speed: 5000,
+  show_dots: true,
+  show_arrows: true,
+  transition_effect: 'fade',
+  alignment: 'center',
+  show_quote_icon: true,
+  class: 'my-testimonial-class'
+}) }}
+  <div class="testimonial-item">
+    <div class="testimonial-content">
+      <blockquote class="testimonial-quote">
+        <p>"This is an amazing product that has transformed our workflow!"</p>
+      </blockquote>
+    </div>
+    <div class="testimonial-author">
+      <div class="testimonial-author-photo">
+        <img src="/path/to/photo.jpg" alt="John Doe" />
+      </div>
+      <div class="testimonial-author-info">
+        <div class="testimonial-author-name">John Doe</div>
+        <div class="testimonial-author-title">CEO, Company Name</div>
+      </div>
+    </div>
+  </div>
+  <div class="testimonial-item">
+    <!-- Another testimonial item -->
+  </div>
+{{ endinclude }}
+```
+
+**Props:**
+- `autoplay` (boolean, default: true): Automatically rotate testimonials
+- `autoplay_speed` (integer, default: 5000): Time in milliseconds between slides
+- `show_dots` (boolean, default: true): Display navigation dots
+- `show_arrows` (boolean, default: true): Display previous/next arrows
+- `transition_effect` (string, default: 'fade'): Transition animation - 'fade', 'slide', or 'slide-fade'
+- `alignment` (string, default: 'center'): Alignment of testimonial content - 'left', 'center', or 'right'
+- `show_quote_icon` (boolean, default: true): Display quote icon before testimonial text
+- `class` (string): Additional CSS classes
+
+**Slot:**
+- `default`: Testimonial items with proper structure (see usage example above)
+
+**Testimonial Item Structure:**
+Each testimonial item should follow this structure:
+```html
+<div class="testimonial-item">
+  <div class="testimonial-content">
+    <blockquote class="testimonial-quote">
+      <p>Testimonial quote text here</p>
+    </blockquote>
+  </div>
+  <div class="testimonial-author">
+    <div class="testimonial-author-photo">
+      <img src="/path/to/photo.jpg" alt="Author Name" />
+    </div>
+    <div class="testimonial-author-info">
+      <div class="testimonial-author-name">Author Name</div>
+      <div class="testimonial-author-title">Author Title/Position</div>
+    </div>
+  </div>
+</div>
+```
+
+**Note:** The component includes keyboard navigation (arrow keys), pause on hover, and accessibility features.
   
 ### 9. Modal (`modal`)
 
@@ -509,5 +583,6 @@ Component libraries are defined in `tara.libraries.yml`:
 - `tara/hero-banner`
 - `tara/button`
 - `tara/modal`
+- `tara/testimonial-slider`
 
 These libraries are automatically loaded when the components are used.

@@ -169,6 +169,15 @@ modal:
       components/modal/modal.css: {}
   js:
     components/modal/modal.js: {}
+
+# Testimonial Slider Component
+testimonial-slider:
+  version: VERSION
+  css:
+    component:
+      components/testimonial-slider/testimonial-slider.css: {}
+  js:
+    components/testimonial-slider/testimonial-slider.js: {}
   dependencies:
     - core/drupal
     - core/once

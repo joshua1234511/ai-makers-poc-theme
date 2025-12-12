@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Testimonial Item Component
+ *
+ * Individual testimonial item template.
+ *
+ * Available variables:
+ * - quote: Testimonial quote text (string)
+ * - author_name: Author name (string)
+ * - author_title: Author title/position (string)
+ * - author_photo: Author photo URL (string, optional)
+ * - show_quote_icon: Whether to show quote icon (boolean)
+ * - class: Additional CSS classes (string)
+ */
+#}
+{%
+  set item_classes = [
+    'testimonial-item',
+    class ? class : '',
+  ]|remove_empty
+%}
+
+<div{{ attributes.addClass(item_classes) }}>
+  <div class="testimonial-content">
+    {% if show_quote_icon %}
+      <div class="testimonial-quote-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.605l.996 2.151c-2.481.967-4.562 3.626-4.562 6.858v4.5h6v12h-11.418zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.605l.996 2.151c-2.481.967-4.562 3.626-4.562 6.858v4.5h6v12h-11.418z" fill="currentColor"/>
+        </svg>
+      </div>
+    {% endif %}
+    
+    {% if quote %}
+      <blockquote class="testimonial-quote">
+        {{ quote }}
+      </blockquote>
+    {% endif %}
+  </div>
+  
+  <div class="testimonial-author">
+    {% if author_photo %}
+      <div class="testimonial-author-photo">
+        <img src="{{ author_photo }}" alt="{{ author_name }}" />
+      </div>
+    {% endif %}
+    <div class="testimonial-author-info">
+      {% if author_name %}
+        <div class="testimonial-author-name">{{ author_name }}</div>
+      {% endif %}
+      {% if author_title %}
+        <div class="testimonial-author-title">{{ author_title }}</div>
+      {% endif %}
+    </div>
+  </div>
+</div>
